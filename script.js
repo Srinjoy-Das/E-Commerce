@@ -19,7 +19,7 @@ closeForm.addEventListener("click", () => {
 
 const ui = () => {
   productDiv.innerHTML = "";
-  productsArr.forEach((elem) => {
+  productsArr.forEach((elem, index) => {
     productDiv.innerHTML += `<div class="product-card">
           <div class="img">
             <img
@@ -35,7 +35,7 @@ const ui = () => {
 
           <div class="bttns">
             <button onclick="updateProduct('${elem.productName}')" id="updt">Update</button>
-            <button id="delt">Delete</button>
+            <button onclick="deleteProduct('${index}')" id="delt">Delete</button>
           </div>
         </div>`;
   });
@@ -89,3 +89,8 @@ const updateProduct = (name) => {
   form[3].value = product.price;
   form[4].value = product.image;
 };
+
+const deleteProduct = (index) => {
+  productsArr.splice(index, 1);
+  ui();
+}
