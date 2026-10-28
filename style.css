@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  background-color: wheat;
+  padding: 10px;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+
+nav {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: rgb(45, 45, 160);
+  color: white;
+  border-radius: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  color: black;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+}
+
+button:hover {
+  background-color: rgb(99, 99, 247);
+  color: white;
+}
+
+.products {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.product-card {
+  height: fit-content;
+  width: 20%;
+  padding: 10px;
+  border: 2px solid gray;
+  border-radius: 20px;
+  background-color: whitesmoke;
+  box-shadow: 3px 0px 10px rgb(193, 193, 193);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.img {
+  height: 60%;
+  width: 100%;
+}
+
+.img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.bttns {
+  display: flex;
+  justify-content: space-between;
+}
+
+#updt {
+  background-color: darkgoldenrod;
+  color: white;
+}
+
+#delt {
+  background-color: darkred;
+  color: white;
+}
+
+.form {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.574);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/*.form .top {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  color: white;
+  font-size: 20px;
+}*/
+
+form {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 20px;
+  gap: 20px;
+  padding: 10px;
+}
+
+.innerText {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.innerText #closeForm:hover {
+  cursor: pointer;
+  background-color: rgb(99, 99, 247);
+  color: white;
+}
+
+input {
+  padding: 10px;
+  outline: none;
+  border: 1px solid gray;
+  border-radius: 10px;
+}
