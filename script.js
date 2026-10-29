@@ -5,8 +5,12 @@ const closeForm = document.querySelector("#closeForm");
 const productDiv = document.querySelector(".products");
 const form = document.querySelector("form");
 
-const productsArr = [];
+const productsArr = JSON.parse(localStorage.getItem("prod")) || [];
 let updateIndex = null;
+
+const saveProducts = () => {
+  localStorage.setItem("prod", JSON.stringify(productsArr));
+};
 
 createBtn.addEventListener("click", () => {
   formDiv.style.display = "flex";
@@ -41,6 +45,8 @@ const ui = () => {
   });
 };
 
+ui();
+
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -70,8 +76,10 @@ form.addEventListener("submit", (event) => {
   if (updateIndex !== null) {
     productsArr[updateIndex] = obj;
     updateIndex = null;
+    saveProducts();
   } else {
     productsArr.push(obj);
+    saveProducts();
   }
 
   ui();
@@ -92,5 +100,8 @@ const updateProduct = (name) => {
 
 const deleteProduct = (index) => {
   productsArr.splice(index, 1);
+  saveProducts();
   ui();
-}
+};
+
+
